@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Firma.Data.Data;
+using Firma.Data.Data.Cms;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Firma.Intranet.Data;
-using Firma.Intranet.Models.CMS;
 
 namespace Firma.Intranet.Controllers
 {
@@ -22,7 +17,7 @@ namespace Firma.Intranet.Controllers
         // GET: Strona
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Strona.ToListAsync());
+            return View(await _context.Strona.ToListAsync());
         }
 
         // GET: Strona/Details/5
@@ -149,14 +144,14 @@ namespace Firma.Intranet.Controllers
             {
                 _context.Strona.Remove(strona);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool StronaExists(int id)
         {
-          return _context.Strona.Any(e => e.IdStrony == id);
+            return _context.Strona.Any(e => e.IdStrony == id);
         }
     }
 }

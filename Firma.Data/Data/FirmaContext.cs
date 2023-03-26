@@ -1,4 +1,8 @@
-﻿namespace Firma.Data.Data
+﻿using Firma.Data.Data.Cms;
+using Firma.Data.Data.Sklep;
+using Microsoft.EntityFrameworkCore;
+
+namespace Firma.Data.Data
 {
     public class FirmaContext : DbContext
     {
@@ -7,7 +11,7 @@
         {
         }
 
-        public DbSet<Strona> Strona { get; set; } = default!;
+        public DbSet<Strona> Strona { get; set; }
 
         public DbSet<Aktualnosc> Aktualnosc { get; set; }
         public DbSet<Rodzaj> Rodzaj { get; set; }
